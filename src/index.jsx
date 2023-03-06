@@ -1,4 +1,4 @@
-//import statement
+
 import { createRoot } from 'react-dom/client';
 import { MainView } from './components/main-view/main-view';
 
@@ -6,12 +6,8 @@ import "./index.scss";
 
 
 const App = () => {
-
   return(
      <MainView />
-//   <div className="my-flix">
-//   <div>Good morning</div>
-// </div>
   )
 };
 
