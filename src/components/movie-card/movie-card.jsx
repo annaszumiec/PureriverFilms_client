@@ -1,25 +1,31 @@
 import PropTypes from "prop-types";
+import { Button, Card } from "react-bootstrap";
+
 
 export const MovieCard = ({ movie, onMovieClick }) => {
-  
   return (
-    <div
-      onClick={() => {
-        onMovieClick(movie);
-      }}
-    >
-      {movie.title}
-      
-    </div>
-  );
+    
+    <Card className="h-100" onClick={() => onMovieClick(movie)}>
+    <Card.Img variant="top" src={movie.image} />
+    <Card.Body>
+      <Card.Title>{movie.title}</Card.Title>
+      <Card.Text>{movie.director}</Card.Text>
+      <Button onClick={() => onBookClick(book)} variant="link">
+        Open
+      </Button>
+    </Card.Body>
+  </Card>
+);
 };
 
 //Here is where we define all the props constraints for the MovieCard
 MovieCard.propTypes = {
   movie: PropTypes.shape({
-    Title: PropTypes.string.isRequired,
-    Description: PropTypes.string.isRequired,
-    ImagePath: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    director: PropTypes.string.isRequired,
+    relese: PropTypes.string
   }).isRequired,
-  onMovieClick: PropTypes.func.isRequired
+  onMovieClick: PropTypes.func.isRequired,
 };
