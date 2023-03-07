@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import { Card, CardGroup, Col, Container, Row, Button, Form} from "react-bootstrap";
 
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
@@ -37,6 +36,18 @@ export const LoginView = ({ onLoggedIn }) => {
   };
 
   return (
+    <Container >
+       <Row>
+        <Col className="d-flex justify-content-center">
+        <h1 style={{marginTop: 120}}>Welcome to Pureriver Films!</h1>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+        <CardGroup>
+        <Card style={{marginTop: 80, backgroundColor: "whitesmoke"}}>
+
     <Form onSubmit={handleSubmit}>
       <Form.Group controlId="formUsername">
         <Form.Label>Username:</Form.Label>
@@ -58,9 +69,16 @@ export const LoginView = ({ onLoggedIn }) => {
           required
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+
+      <Button variant="primary" type="submit" style={{ margin: '0.7rem'}}>
         Submit
       </Button>
     </Form>
+
+    </Card>
+    </CardGroup>
+    </Col>
+    </Row>
+    </Container >
   );
 };

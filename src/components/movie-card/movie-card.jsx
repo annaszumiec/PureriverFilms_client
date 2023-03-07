@@ -1,19 +1,11 @@
 import PropTypes from "prop-types";
 import { Button, Card } from "react-bootstrap";
 
+
 export const MovieCard = ({ movie, onMovieClick }) => {
   return (
-<<<<<<< Updated upstream
-    <div
-      onClick={() => {
-        onMovieClick(movie);
-      }}
-    >
-      {movie.title}
-    </div>
-  );
-=======
-    <Card onClick={() => onMovieClick(movie)}>
+    
+    <Card className="h-100" onClick={() => onMovieClick(movie)}>
     <Card.Img variant="top" src={movie.image} />
     <Card.Body>
       <Card.Title>{movie.title}</Card.Title>
@@ -24,7 +16,6 @@ export const MovieCard = ({ movie, onMovieClick }) => {
     </Card.Body>
   </Card>
 );
->>>>>>> Stashed changes
 };
 
 //Here is where we define all the props constraints for the MovieCard
