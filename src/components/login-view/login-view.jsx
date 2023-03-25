@@ -37,12 +37,6 @@ export const LoginView = ({ onLoggedIn }) => {
 
   return (
     <Container >
-       <Row>
-        <Col className="d-flex justify-content-center">
-        <h1 style={{marginTop: 120}}>Welcome to Pureriver Films!</h1>
-        </Col>
-      </Row>
-
       <Row>
         <Col>
         <CardGroup>
@@ -74,6 +68,7 @@ export const LoginView = ({ onLoggedIn }) => {
         Submit
       </Button>
     </Form>
+    
 
     </Card>
     </CardGroup>

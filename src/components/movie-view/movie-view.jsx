@@ -1,7 +1,8 @@
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { Button} from "react-bootstrap";
 import { MovieCard } from "../movie-card/movie-card";
-import "./movie-view.scss"
+
 
 export const MovieView = ({ movies}) => {
   const { movieId } = useParams();
@@ -18,7 +19,7 @@ export const MovieView = ({ movies}) => {
   return (
     <div>
       <div>
-        <img className="w-100" src={movie.image} />
+        <img className="w-40" src={movie.image} />
       </div>
       <div>
         <span>Title: </span>
@@ -37,7 +38,7 @@ export const MovieView = ({ movies}) => {
         <span>{movie.genre}</span>
       </div>  
       <Link to={`/`}>
-        <button className="back-button">Back</button>
+        <Button className="back-button">Back</Button>
       </Link>
     </div>
   );
