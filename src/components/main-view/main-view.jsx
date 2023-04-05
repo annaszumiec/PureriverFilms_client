@@ -13,14 +13,35 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
+
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);
+  const [favorites, setFavorites] = useState('');
  
- 
+  //bg image
+  const bgImage = (...styleClassNames) => {
+    const container = document.querySelector("#root");
+    container.className = "";
+    styleClassNames.forEach((styleClassName) =>
+      container.classList.add(styleClassName)
+    );
+  };
+
+  useEffect(() => {
+    if (user) {
+      bgImage("text-bg-dark");
+    } else {
+      bgImage("root");
+    }
+  }, [user]);
+
+  //bg Image - end
+
+
   useEffect(() => {
     if (!token) {
       return;
@@ -48,6 +69,8 @@ export const MainView = () => {
         .catch((error) =>{
           console.log(error);
         });
+
+       
       
   }, [token]);
 
@@ -111,9 +134,10 @@ export const MainView = () => {
                 ) : (
                   <Col md={8}>
                     <MovieView
+                   
                       movies={movies}
                       username={user.Username}
-                      favoriteMovies={user.FavoriteMovies}
+                     
                     />
                   </Col>
                 )}
@@ -132,7 +156,7 @@ export const MainView = () => {
                 ) : (
                   <>
                     {movies.map((movie) => (
-                      <Col className="mb-4" key={movie.id} md={3}>
+                      <Col className="mb-5" key={movie.id} md={3}>
                         <MovieCard 
                         movie={movie} />
                       </Col>

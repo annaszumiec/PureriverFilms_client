@@ -1,28 +1,20 @@
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { Button} from "react-bootstrap";
-import { MovieCard } from "../movie-card/movie-card";
 
-
-export const MovieView = ({ movies}) => {
+export const MovieView = ({ movies }) => {
   const { movieId } = useParams();
   const movie = movies.find((m) => m.id === movieId);
 
-
-  {console.log(movies)}
-
-  if (!movie) {
-    // movie not found, redirect to homepage
-    return <Redirect to="/" />;
-  }
-  
   return (
     <div>
       <div>
-        <img className="w-40" src={movie.image} />
+        <img
+          style={{ float: "left", paddingRight: "40px" }}
+          src={movie.image}
+        />
       </div>
+
       <div>
-        <span>Title: </span>
         <span>{movie.title}</span>
       </div>
       <div>
@@ -36,9 +28,9 @@ export const MovieView = ({ movies}) => {
       <div>
         <span>Genre: </span>
         <span>{movie.genre}</span>
-      </div>  
+      </div>
       <Link to={`/`}>
-        <Button className="back-button">Back</Button>
+        <button className="back-button">Back</button>
       </Link>
     </div>
   );

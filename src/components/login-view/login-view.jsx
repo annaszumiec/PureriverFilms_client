@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card, CardGroup, Col, Container, Row, Button, Form} from "react-bootstrap";
 
+
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -40,9 +41,14 @@ export const LoginView = ({ onLoggedIn }) => {
       <Row>
         <Col>
         <CardGroup>
-        <Card style={{marginTop: 80, backgroundColor: "whitesmoke"}}>
+        <Card 
+     className="p-4 rounded-4 shadow-lg m-auto"
+     style={{ width: "17rem",backgroundColor: " #3A473D",opacity:"70%",border:"1px solid #D8E4FA ",maxWidth:"300px" }}
+        >
 
-    <Form onSubmit={handleSubmit}>
+    <Form
+     style={{ color:" white" }}
+     onSubmit={handleSubmit}>
       <Form.Group controlId="formUsername">
         <Form.Label>Username:</Form.Label>
         <Form.Control
@@ -51,21 +57,30 @@ export const LoginView = ({ onLoggedIn }) => {
           onChange={(e) => setUsername(e.target.value)}
           required
           minLength="3" 
+          style={{ color:"white"}}
         />
       </Form.Group>
 
       <Form.Group controlId="formPassword">
-        <Form.Label>Password:</Form.Label>
+        <Form.Label
+         style={{ margin:"0px", marginTop:"10px"}}
+        >Password:</Form.Label>
         <Form.Control
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          style={{ color:"white"}}
+          
         />
       </Form.Group>
 
-      <Button variant="primary" type="submit" style={{ margin: '0.7rem'}}>
-        Submit
+      <Button 
+      className=" d-block w-100 mb-3"
+      type="submit"
+      style={{ marginTop:"40px"}}
+       >
+        Log in
       </Button>
     </Form>
     

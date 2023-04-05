@@ -1,33 +1,31 @@
-import { Container, Nav, Navbar,Card } from 'react-bootstrap';
+import {  Nav, NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-export const AccessCard = ({ user, onLoggedOut }) => {
+export const AccessCard = ({ user }) => {
   return (
-    <Navbar
-     
-      bg='light'
-      
-     
-    >
-      <Container>
-        
-        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-        <Navbar.Collapse id='responsive-navbar-nav'>
-          <Nav className='me-auto'>
+
+          <Nav
+           className="  m-auto"
+           style={{ width: "17rem",maxWidth:"300px",paddingTop:"100px" }}
+          >
             {!user && (
               <>
-                <Nav.Link as={Link} to='/login'>
-                  Login
-                </Nav.Link>
-                <Nav.Link as={Link} to='/signup'>
+                <NavLink 
+              style={{ fontWeight:"300", fontSize:"24",fontFamily: "Cormorant"}}
+                as={Link} to='/login'>
+                  Login 
+                </NavLink>
+                <NavLink
+                  style={{ fontWeight:"300", fontSize:"24",fontFamily: "Cormorant"}}
+                   as={Link} to='/signup'>
                   Sign up
-                </Nav.Link>
+                </NavLink>
               </>
             )}
             
           </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+       
+    
+
   );
 };

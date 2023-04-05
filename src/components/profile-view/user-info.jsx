@@ -6,19 +6,21 @@ export const UserInfo = ({ user }) => {
   let userBirthday = moment.utc(user.Birthday).format('DD/MM/YYYY');
 
   return (
-    <Row className='d-flex flex-column flex-lg-row ms-2 text-lg-center mt-lg-3 mt-3'>
-      <Col>
+    <Row 
+    style={{color:"#A8ADA4" }}
+    className='d-flex flex-column flex-lg-row ms-2  mt-lg-3 mt-3'>
+      <div>
         <span>Username: </span>
         <span className='fw-bolder'>{user.Username}</span>
-      </Col>
-      <Col>
+      </div>
+      <div>
         <span>Email: </span>
         <span className='fw-bolder'>{user.Email}</span>
-      </Col>
-      <Col>
+      </div>
+      <div>
         <span>Birthday: </span>
         <span className='fw-bolder'>{userBirthday}</span>
-      </Col>
+      </div>
     </Row>
   );
 };
