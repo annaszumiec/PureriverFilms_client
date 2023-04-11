@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 
 export const MovieView = ({ movies }) => {
   const { movieId } = useParams();
@@ -14,14 +15,15 @@ export const MovieView = ({ movies }) => {
         />
       </div>
 
-      <div>
+      <div 
+      style={{ fontSize:"24px",marginBottom:"30px" }}>
         <span>{movie.title}</span>
       </div>
       <div>
-        <span>Description: </span>
         <span>{movie.description}</span>
       </div>
-      <div>
+      <div
+       style={{ marginTop:"20px" }}>
         <span> Director: </span>
         <span>{movie.director}</span>
       </div>
@@ -30,7 +32,11 @@ export const MovieView = ({ movies }) => {
         <span>{movie.genre}</span>
       </div>
       <Link to={`/`}>
-        <button className="back-button">Back</button>
+      <Button type='submit' className='mt-3'
+                         style={{ backgroundColor:"#3A473D", border:"none", color:"#D8E4FA"  }}
+                    >
+                      Back
+                    </Button>
       </Link>
     </div>
   );

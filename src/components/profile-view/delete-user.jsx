@@ -32,7 +32,8 @@ export const DeleteUser = ({ storedToken, storedUser }) => {
 
   return (
     <Col md={5} className='text-end px-4'>
-      <div>
+      <div 
+       style={{ marginTop:"30px", marginBottom:"30px" }}>
         <Button
           onClick={() => handleDeregister(storedUser._id)}
           className='button-delete'

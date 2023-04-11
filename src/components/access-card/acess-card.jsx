@@ -11,12 +11,12 @@ export const AccessCard = ({ user }) => {
             {!user && (
               <>
                 <NavLink 
-              style={{ fontWeight:"300", fontSize:"24",fontFamily: "Cormorant"}}
+              style={{ fontWeight:"300", fontSize:"28",fontFamily: "Cormorant",marginBottom:"20px"}}
                 as={Link} to='/login'>
                   Login 
                 </NavLink>
                 <NavLink
-                  style={{ fontWeight:"300", fontSize:"24",fontFamily: "Cormorant"}}
+                  style={{ fontWeight:"300", fontSize:"28",fontFamily: "Cormorant"}}
                    as={Link} to='/signup'>
                   Sign up
                 </NavLink>
