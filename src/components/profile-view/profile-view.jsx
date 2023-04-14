@@ -7,7 +7,6 @@ import { DeleteUser } from "./delete-user"
 
 export const ProfileView = ({ movies}) => {
   const storedToken = localStorage.getItem('token');
-
   const storedUser = JSON.parse(localStorage.getItem('user'));
 
   return (

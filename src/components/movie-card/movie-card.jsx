@@ -1,23 +1,60 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Button, Card } from "react-bootstrap";
-import { Link } from 'react-router-dom';
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import {FavoriteIcon} from "../favorite-icon/favorite-icon"
 
 export const MovieCard = ({ movie }) => {
   return (
-
-    <Card className="h-100" >
-    <Card.Img  variant="top" src={movie.image} />
-    <Card.Body>
-    <Card.Title>{movie.title}</Card.Title>
-    <Card.Text>{movie.director}</Card.Text>
-    <Link className="open-button" to={`/movies/${encodeURIComponent(movie.id)}`}>
-          <Button variant="link">Details</Button>
+    <Card className=" h-100" style={{ border: "0px solid #47515E" }}>
+      <Card.Body 
+      style={{ background: "#3A473D" }}>
+        <Card.Img src={movie.image} alt='image' />
+        <FavoriteIcon
+         style={{ margin: "5px", float: "right" }}/>
+        <Link to={`/`}>
+          <div
+            style={{
+              marginLeft: "0",
+              marginTop: "30",
+              color: "A8ADA4",
+              float: "right",
+            }}
+            variant="link"
+          >
+          </div>
         </Link>
-    </Card.Body>
-  </Card>
-);
+
+        <Card.Text style={{ marginTop: "30", color: "A8ADA4" }}>
+          directed by{" "}
+        </Card.Text>
+
+        <Card.Title
+          style={{
+            fontFamily: "Cormorant",
+            fontWeight: "600",
+            color: "D8E4FA",
+            fontSize: "24",
+          }}
+        >
+          {movie.director}
+        </Card.Title>
+        <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
+          <div
+            style={{ marginLeft: "0", marginTop: "30", color: "A8ADA4" }}
+            variant="link"
+          >
+            Read more
+          </div>
+        </Link>
+        
+
+      </Card.Body>
+    
+    </Card>
+  );
 };
+
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
@@ -25,6 +62,6 @@ MovieCard.propTypes = {
     description: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     director: PropTypes.string.isRequired,
-    relese: PropTypes.string
-  }).isRequired
+    relese: PropTypes.string,
+  }).isRequired,
 };
