@@ -1,16 +1,18 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {FavoriteIcon} from "../favorite-icon/favorite-icon"
 
 export const MovieCard = ({ movie }) => {
+  console.log(movie)
   return (
     <Card className=" h-100" style={{ border: "0px solid #47515E" }}>
       <Card.Body 
       style={{ background: "#3A473D" }}>
         <Card.Img src={movie.image} alt='image' />
-        <FavoriteIcon
+
+        <FavoriteIcon movieID = {movie.id}
+
          style={{ margin: "5px", float: "right" }}/>
         <Link to={`/`}>
           <div

@@ -97,7 +97,7 @@ export const MainView = () => {
 
   const handleSearchInput = (e) => {
     const searchWord = e.target.value.toLowerCase();
-    let tempArray = movies.filter(m => m.Title.toLowerCase().includes(searchWord))
+    let tempArray = movies.filter(m => m.title.toLowerCase().includes(searchWord))
     setFilteredMovies(tempArray)
 };
 
@@ -114,10 +114,6 @@ export const MainView = () => {
         handleSearchInput={handleSearchInput}
       />
       <AccessCard user={user} />
-      <>
-        {error && <div>{error}</div>}
-        {isPending && <div> loading... </div>}
-      </>
       <Container>
         <Row className="justify-content-md-center">
           <Routes>
@@ -170,27 +166,6 @@ export const MainView = () => {
                 </>
               }
             />
-
-            <Route
-              path="/"
-              element={
-                <>
-                  {!user ? (
-                    <Navigate to="/login" replace />
-                  ) : movies.length === 0 ? (
-                    <Col>The list is empty!</Col>
-                  ) : (
-                    <>
-                      {movies.map((movie) => (
-                        <Col className="mb-5" key={movie.id} md={3}>
-                          <MovieCard movie={movie} />
-                        </Col>
-                      ))}
-                    </>
-                  )}
-                </>
-              }
-            />
             <Route
               path="/users/:username"
               element={
@@ -217,6 +192,8 @@ export const MainView = () => {
                     <div>The list is empty!</div>
                   ) : (
                     <>
+                     {error && <div>{error}</div>}
+                      {isPending && <div> loading... </div>}
                       {filteredMovies.map((movie) => (
                         <Col className="mb-5" key={movie.id} md={3}>
                           <MovieCard movie={movie} />
