@@ -1,5 +1,6 @@
 import { MdOutlineFavoriteBorder } from "react-icons/md";
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+
 
 
 export const FavoriteIcon = ({movieID}) => {
@@ -12,6 +13,8 @@ const token = localStorage.getItem('token');
 
  const handleClick =() => {
 
+ if(!active)
+{
   fetch(
     `https://pureriverfilms.herokuapp.com/users/${user.Username}/movies/${movieID}`,
     {
@@ -25,8 +28,9 @@ const token = localStorage.getItem('token');
     .then((response) => {
       if (response.ok) {
         alert("Added to favorites") 
-        setActive(!active)
-        console.log('addFavorites')
+        setActive(!active);
+        user.FavoriteMovies.push(movieID);
+       localStorage.setItem("user", JSON.stringify(user))
         
       } else {
         alert('Something went wrong');
@@ -36,7 +40,8 @@ const token = localStorage.getItem('token');
       console.log(error);
     });
 
-    
+  }
+  else {
     fetch(
       `https://pureriverfilms.herokuapp.com/users/${user.Username}/movies/${movieID}`,
       {
@@ -50,9 +55,12 @@ const token = localStorage.getItem('token');
       .then((response) => {
         if (response.ok) {
           alert("Remove from favorites") 
-          setActive(active)
-          console.log('removeFavorites')
-          
+          setActive(active);
+          user.FavoriteMovies = user.FavoriteMovies.filter(
+            (movieId) => movieId == movieID
+          );
+          localStorage.setItem("user", JSON.stringify(user));
+         
         } else {
           alert('Something went wrong');
         }
@@ -61,11 +69,18 @@ const token = localStorage.getItem('token');
         console.log(error);
       });
 
+    }
  }
 
-
-
-
+ useEffect (() => {
+  const favMovies = user.FavoriteMovies;
+  if (favMovies && favMovies.length > 0) {
+    const match = favMovies.find((movieId) => movieId === movieID);
+    if (match) {
+      setActive(true);
+    }
+  }
+ })
 
 
 

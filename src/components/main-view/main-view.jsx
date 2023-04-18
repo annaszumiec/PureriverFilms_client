@@ -25,7 +25,6 @@ export const MainView = () => {
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
-  const [favorites, setFavorites] = useState("");
 
   //bg image
   const bgImage = (...styleClassNames) => {
@@ -53,8 +52,7 @@ export const MainView = () => {
     fetch("https://pureriverfilms.herokuapp.com/movies", {
       headers: { Authorization: `Bearer ${token}` },
     })
-      // .then((response) => response.json())
-      
+     
       .then((res) => {
         if (!res.ok) {
           throw Error("could not fetch the data for that resource");

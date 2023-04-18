@@ -9,7 +9,7 @@ export const MovieCard = ({ movie }) => {
     <Card className=" h-100" style={{ border: "0px solid #47515E" }}>
       <Card.Body 
       style={{ background: "#3A473D" }}>
-        <Card.Img src={movie.image} alt='image' />
+        <Card.Img src={movie.image} alt='image'/>
 
         <FavoriteIcon movieID = {movie.id}
 

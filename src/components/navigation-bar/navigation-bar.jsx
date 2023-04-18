@@ -57,22 +57,6 @@ export const NavigationBar = ({ user, onLoggedOut,  handleSearchInput  }) => {
                 placeholder="Search by title"
                 onChange={handleSearchInput}
               />
-
-              {/* <Link to={"/"}>
-                <Button
-                  style={{
-                    color: "#E8E9EC",
-                    backgroundColor: "#3A473D",
-                    borderColor: "gray",
-                    marginTop: "15px",
-                  }}
-                  onClick={() => {
-                    onSearch();
-                  }}
-                >
-                  search
-                </Button>
-              </Link> */}
             </Form>
           </>
         )}
