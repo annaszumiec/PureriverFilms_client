@@ -59,8 +59,8 @@ export const UpdateView = ({ storedToken, storedUser }) => {
 
   return (
     <Row className="mt-2">
-      <Col md={5}>
-        <CardGroup>
+      <Col md={3}>
+        <CardGroup >
           <Card className="border-0">
             <Card.Body style={{ backgroundColor: "#212529" }}>
               <div className="text-start h2 mb-0" style={{ color: "#A8ADA4" }}>
@@ -144,6 +144,7 @@ export const UpdateView = ({ storedToken, storedUser }) => {
                         backgroundColor: "#3A473D",
                         border: "none",
                         color: "#E8E9EC",
+                        float:"left"
                       }}
                     >
                       Update

@@ -8,26 +8,22 @@ export const MovieCard = ({ movie, setUser }) => {
   return (
     <Card className=" h-100" style={{ border: "0px solid #47515E" }}>
       <Card.Body style={{ background: "#3A473D" }}>
-        <Card.Img src={movie.image} alt="image" />
+        <Card.Img src={movie.image} alt="image"
+        style={{ marginBottom: "15px" }}
+         />
 
         <FavoriteIcon
           movieID={movie.id}
           setUser={setUser}
-          style={{ margin: "5px", float: "right" }}
         />
+
         <Link to={`/`}>
           <div
-            style={{
-              marginLeft: "0",
-              marginTop: "30",
-              color: "A8ADA4",
-              float: "right",
-            }}
             variant="link"
           ></div>
         </Link>
 
-        <Card.Text style={{ marginTop: "30", color: "A8ADA4" }}>
+        <Card.Text style={{ marginTop: "10", color: "A8ADA4" }}>
           directed by{" "}
         </Card.Text>
 
