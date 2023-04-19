@@ -21,10 +21,8 @@ export const MainView = () => {
 
   const [filteredMovies, setFilteredMovies] = useState([]);
 
-
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
-
 
   //bg image
   const bgImage = (...styleClassNames) => {
@@ -52,7 +50,6 @@ export const MainView = () => {
     fetch("https://pureriverfilms.herokuapp.com/movies", {
       headers: { Authorization: `Bearer ${token}` },
     })
-     
       .then((res) => {
         if (!res.ok) {
           throw Error("could not fetch the data for that resource");
@@ -72,14 +69,13 @@ export const MainView = () => {
             image: movie.ImagePath,
             description: movie.Description,
             genre: movie.Genre.Name,
-            director: movie.Director.Name,
-            release: movie.Release,
+            director: movie.Director.Name
           };
         });
 
         setMovies(moviesFromApi);
       })
-      
+
       .catch((err) => {
         setIsPending(false);
         setError(err.message);
@@ -95,10 +91,11 @@ export const MainView = () => {
 
   const handleSearchInput = (e) => {
     const searchWord = e.target.value.toLowerCase();
-    let tempArray = movies.filter(m => m.title.toLowerCase().includes(searchWord))
-    setFilteredMovies(tempArray)
-};
-
+    let tempArray = movies.filter((m) =>
+      m.title.toLowerCase().includes(searchWord)
+    );
+    setFilteredMovies(tempArray);
+  };
 
   return (
     <BrowserRouter>
@@ -190,7 +187,7 @@ export const MainView = () => {
                     <div>The list is empty!</div>
                   ) : (
                     <>
-                     {error && <div>{error}</div>}
+                      {error && <div>{error}</div>}
                       {isPending && <div> loading... </div>}
                       {filteredMovies.map((movie) => (
                         <Col className="mb-5" key={movie.id} md={3}>
