@@ -1,8 +1,7 @@
 import { Container, Form, Nav, Navbar, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-
-export const NavigationBar = ({ user, onLoggedOut,  handleSearchInput  }) => {
+export const NavigationBar = ({ user, onLoggedOut, handleSearchInput }) => {
   return (
     <Navbar collapseOnSelect style={{ background: " #3A473D" }} expand="md">
       <Container>
@@ -57,22 +56,6 @@ export const NavigationBar = ({ user, onLoggedOut,  handleSearchInput  }) => {
                 placeholder="Search by title"
                 onChange={handleSearchInput}
               />
-
-              {/* <Link to={"/"}>
-                <Button
-                  style={{
-                    color: "#E8E9EC",
-                    backgroundColor: "#3A473D",
-                    borderColor: "gray",
-                    marginTop: "15px",
-                  }}
-                  onClick={() => {
-                    onSearch();
-                  }}
-                >
-                  search
-                </Button>
-              </Link> */}
             </Form>
           </>
         )}

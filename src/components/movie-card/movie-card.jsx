@@ -1,17 +1,20 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {FavoriteIcon} from "../favorite-icon/favorite-icon"
+import { FavoriteIcon } from "../favorite-icon/favorite-icon";
 
-export const MovieCard = ({ movie }) => {
+export const MovieCard = ({ movie, setUser }) => {
+  console.log(movie);
   return (
     <Card className=" h-100" style={{ border: "0px solid #47515E" }}>
-      <Card.Body 
-      style={{ background: "#3A473D" }}>
-        <Card.Img src={movie.image} alt='image' />
+      <Card.Body style={{ background: "#3A473D" }}>
+        <Card.Img src={movie.image} alt="image" />
+
         <FavoriteIcon
-         style={{ margin: "5px", float: "right" }}/>
+          movieID={movie.id}
+          setUser={setUser}
+          style={{ margin: "5px", float: "right" }}
+        />
         <Link to={`/`}>
           <div
             style={{
@@ -21,8 +24,7 @@ export const MovieCard = ({ movie }) => {
               float: "right",
             }}
             variant="link"
-          >
-          </div>
+          ></div>
         </Link>
 
         <Card.Text style={{ marginTop: "30", color: "A8ADA4" }}>
@@ -47,14 +49,10 @@ export const MovieCard = ({ movie }) => {
             Read more
           </div>
         </Link>
-        
-
       </Card.Body>
-    
     </Card>
   );
 };
-
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({

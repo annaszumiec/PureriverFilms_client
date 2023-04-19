@@ -1,4 +1,4 @@
-import { Button, Col } from 'react-bootstrap';
+import { Button, Col } from "react-bootstrap";
 
 export const DeleteUser = ({ storedToken, storedUser }) => {
   const handleDeregister = () => {
@@ -7,37 +7,36 @@ export const DeleteUser = ({ storedToken, storedUser }) => {
     );
 
     userWarning === false
-      ? alert('Great decision. Keep choosing your favorite movies')
+      ? alert("Great decision. Keep choosing your favorite movies")
       : fetch(
           `https://pureriverfilms.herokuapp.com/users/${storedUser.Username}`,
           {
-            method: 'DELETE',
+            method: "DELETE",
             headers: {
               Authorization: `Bearer ${storedToken}`,
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
             },
           }
         )
           .then((response) => {
             if (response.ok) {
-              alert('Account successfully deleted');
+              alert("Account successfully deleted");
               localStorage.clear();
               window.location.reload();
             } else {
-              alert('Something went wrong');
+              alert("Something went wrong");
             }
           })
           .catch((e) => console.log(e));
   };
 
   return (
-    <Col md={5} className='text-end px-4'>
-      <div 
-       style={{ marginTop:"30px", marginBottom:"30px" }}>
+    <Col md={5} className="text-end px-4">
+      <div style={{ marginTop: "30px", marginBottom: "30px" }}>
         <Button
           onClick={() => handleDeregister(storedUser._id)}
-          className='button-delete'
-          variant='danger'
+          className="button-delete"
+          variant="danger"
         >
           Delete Account
         </Button>

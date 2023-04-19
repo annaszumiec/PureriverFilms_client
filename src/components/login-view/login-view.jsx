@@ -1,6 +1,13 @@
 import { useState } from "react";
-import { Card, CardGroup, Col, Container, Row, Button, Form} from "react-bootstrap";
-
+import {
+  Card,
+  CardGroup,
+  Col,
+  Container,
+  Row,
+  Button,
+  Form,
+} from "react-bootstrap";
 
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
@@ -37,58 +44,58 @@ export const LoginView = ({ onLoggedIn }) => {
   };
 
   return (
-    <Container >
+    <Container>
       <Row>
         <Col>
-        <CardGroup>
-        <Card 
-     className="p-4 rounded-4 shadow-lg m-auto"
-     style={{ width: "17rem",backgroundColor: " #3A473D",opacity:"70%",border:"1px solid #D8E4FA ",maxWidth:"300px" }}
-        >
+          <CardGroup>
+            <Card
+              className="p-4 rounded-4 shadow-lg m-auto"
+              style={{
+                width: "17rem",
+                backgroundColor: " #3A473D",
+                opacity: "70%",
+                border: "1px solid #D8E4FA ",
+                maxWidth: "300px",
+              }}
+            >
+              <Form style={{ color: " white" }} onSubmit={handleSubmit}>
+                <Form.Group controlId="formUsername">
+                  <Form.Label>Username:</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    required
+                    minLength="3"
+                    style={{ color: "white" }}
+                  />
+                </Form.Group>
 
-    <Form
-     style={{ color:" white" }}
-     onSubmit={handleSubmit}>
-      <Form.Group controlId="formUsername">
-        <Form.Label>Username:</Form.Label>
-        <Form.Control
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-          minLength="3" 
-          style={{ color:"white"}}
-        />
-      </Form.Group>
+                <Form.Group controlId="formPassword">
+                  <Form.Label style={{ margin: "0px", marginTop: "10px" }}>
+                    Password:
+                  </Form.Label>
+                  <Form.Control
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    style={{ color: "white" }}
+                  />
+                </Form.Group>
 
-      <Form.Group controlId="formPassword">
-        <Form.Label
-         style={{ margin:"0px", marginTop:"10px"}}
-        >Password:</Form.Label>
-        <Form.Control
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          style={{ color:"white"}}
-          
-        />
-      </Form.Group>
-
-      <Button 
-      className=" d-block w-100 mb-3"
-      type="submit"
-      style={{ marginTop:"40px"}}
-       >
-        Log in
-      </Button>
-    </Form>
-    
-
-    </Card>
-    </CardGroup>
-    </Col>
-    </Row>
-    </Container >
+                <Button
+                  className=" d-block w-100 mb-3"
+                  type="submit"
+                  style={{ marginTop: "40px" }}
+                >
+                  Log in
+                </Button>
+              </Form>
+            </Card>
+          </CardGroup>
+        </Col>
+      </Row>
+    </Container>
   );
 };
