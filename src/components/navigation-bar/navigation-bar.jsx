@@ -1,8 +1,7 @@
 import { Container, Form, Nav, Navbar, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-
-export const NavigationBar = ({ user, onLoggedOut,  handleSearchInput  }) => {
+export const NavigationBar = ({ user, onLoggedOut, handleSearchInput }) => {
   return (
     <Navbar collapseOnSelect style={{ background: " #3A473D" }} expand="md">
       <Container>

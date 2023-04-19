@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FavoriteIcon } from "../favorite-icon/favorite-icon";
 
-export const MovieCard = ({ movie }) => {
+export const MovieCard = ({ movie, setUser }) => {
   console.log(movie);
   return (
     <Card className=" h-100" style={{ border: "0px solid #47515E" }}>
@@ -12,6 +12,7 @@ export const MovieCard = ({ movie }) => {
 
         <FavoriteIcon
           movieID={movie.id}
+          setUser={setUser}
           style={{ margin: "5px", float: "right" }}
         />
         <Link to={`/`}>
