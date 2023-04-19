@@ -19,7 +19,7 @@ export const FavoriteMovies = ({ movies, storedUser }) => {
           <div className="text-start h2 mb-4">List of favorite movies</div>
 
           {favoriteMoviesList.map((movie) => (
-            <Col className="mb-5" key={movie.id} xs={12} sm={6} md={4} lg={3}>
+            <Col className="mb-6" key={movie.id} xs={12} sm={6} md={4} lg={2}>
 
               <MovieCard movie={movie} setUser={setUser} />
               
