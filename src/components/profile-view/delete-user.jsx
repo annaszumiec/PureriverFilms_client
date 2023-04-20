@@ -36,8 +36,7 @@ export const DeleteUser = ({ storedToken, storedUser }) => {
         <Button
           onClick={() => handleDeregister(storedUser._id)}
           className="button-delete"
-          variant="danger"
-        >
+          variant="danger" >
           Delete Account
         </Button>
       </div>
