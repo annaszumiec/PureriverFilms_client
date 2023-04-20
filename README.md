@@ -1,6 +1,6 @@
 # PureriverFilms_client
 
-[PureriverFilms on netlyfy](https://pureriverfilms.netlify.app/)
+[PureriverFilms on Netlify](https://pureriverfilms.netlify.app/)
 
 ## Component-Based App Structures created with React
 
