@@ -18,7 +18,8 @@ $primary: #D8E4FA;
 $body-bg: #3A473D;
 
 
-@import '~bootstrap/scss/bootstrap.scss';
+// @import '~bootstrap/scss/bootstrap.scss';
+@import "node_modules/bootstrap/scss/bootstrap";
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,600&display=swap');
 
