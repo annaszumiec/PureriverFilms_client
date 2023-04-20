@@ -1,5 +1,7 @@
 # PureriverFilms_client
 
+[PureriverFilms on netlyfy](https://pureriverfilms.netlify.app/)
+
 ## Component-Based App Structures created with React
 
 ### The purpose of Pureriver Films App
@@ -12,3 +14,5 @@
 - Create React components using JSX
 - Create connected React views for a single-page application (SPA)
 - Integrate child and parent components effectively
+
+
