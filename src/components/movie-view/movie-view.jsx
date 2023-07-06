@@ -16,20 +16,24 @@ export const MovieView = ({ movies }) => {
       </div>
 
       <div 
-      style={{ fontSize:"24px",marginBottom:"30px" }}>
+      style={{ fontSize:"24px",marginBottom:"30px",color:"#D8E4FA" }}>
         <span>{movie.title}</span>
       </div>
       <div>
-        <span>{movie.description}</span>
+        <span
+         style={{ color:"#A8ADA4" }}
+        
+        >{movie.description}</span>
       </div>
       <div
-       style={{ marginTop:"20px" }}>
+       style={{ marginTop:"20px",color:"#D8E4FA " }}>
         <span> Director: </span>
         <span>{movie.director}</span>
       </div>
-      <div>
-        <span>Genre: </span>
-        <span>{movie.genre}</span>
+      <div
+       style={{ color:"#D8E4FA " }}>
+        <span >Genre: </span>
+        <span >{movie.genre}</span>
       </div>
       <Link to={`/`}>
       <Button type='submit' className='mt-3'

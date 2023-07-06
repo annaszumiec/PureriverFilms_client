@@ -1,9 +1,8 @@
 //#47515E ---borders card
 // #3A473D ---green
 //#D8E4FA --blue
-// #A8ADA --- text light green
+//#A8ADA4--- text light green
 // #E8E9EC--- light gray
-
 
 body {
   background-image: url("./img/river.jpg");
@@ -13,19 +12,14 @@ body {
   background-size: cover;
 }
 
-
-$primary: #D8E4FA;
-$body-bg: #3A473D;
-
+$primary: #d8e4fa;
+$body-bg: #3a473d;
 
 // @import '~bootstrap/scss/bootstrap.scss';
 @import "node_modules/bootstrap/scss/bootstrap";
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,600&display=swap");
 
 $font-family-sans-serif: -apple-system, "Oswald", Roboto, "Helvetica Neue",
   "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
-  
